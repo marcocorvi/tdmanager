@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <Preference
+       android:key="THMANAGER_CWD"
+       android:title="@string/pref_cwd_title"
+       />
+
+  <com.topodroid.TdManager.MyEditPreference
+       android:key="THMANAGER_DIST"
+       android:title="@string/pref_dist_title"
+       android:summary="@string/pref_dist_summary"
+       android:dialogTitle="@string/pref_dist_title"
+       android:dialogMessage="@string/pref_dist_message"
+       android:defaultValue="40"
+       />
+
+  <com.topodroid.TdManager.MyEditPreference
+       android:key="THMANAGER_TEXTSIZE"
+       android:title="@string/pref_textsize_title"
+       android:summary="@string/pref_textsize_summary"
+       android:dialogTitle="@string/pref_textsize_title"
+       android:dialogMessage="@string/pref_textsize_message"
+       android:defaultValue="24"
+       />
+
+
+</PreferenceScreen>

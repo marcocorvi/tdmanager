@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TdManager</string>
+
+    <string name="name_invalid">Invalid name</string>
+    <string name="name_exists">Existing file</string>
+
+    <string name="no_editor">Editor not found</string>
+    <string name="no_file">File not found</string>
+    <string name="no_extra">Missing file extra</string>
+    <string name="no_path">Missing filepath</string>
+    <string name="no_equate">No equate</string>
+    <string name="no_thconfig">Missing thconfig file</string>
+    <string name="no_th_file">No Therion file</string>
+    <string name="file_exists">File exists</string>
+    <string name="file_create_fail">File create fail</string>
+
+    <string name="ask_delete_thconfig">Delete ThConfig file</string>
+    <string name="ask_remove_equate">Remove equate %1$s ?</string>
+    <string name="equate_no_station">No station selected</string>
+    <string name="equate_no_stations">Too few stations</string>
+    <string name="equate_no_nearby">No station nearby</string>
+
+    <string name="menu_delete">Delete</string>
+    <string name="menu_new">New</string>
+    <string name="menu_equate">Add Equate</string>
+    <string name="menu_equates">Equates</string>
+    <string name="menu_options">Options</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_view">View sources</string>
+    <string name="menu_add">Add source</string>
+    <string name="menu_drop">Drop sources</string>
+
+    <string name="button_ok">O.K.</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_save">Save</string>
+
+    <string name="overwrite">overwrite</string>
+
+
+    <string name="title_help">TdManager v. %1$s</string>
+    <string name="title_export">Export project as ...</string>
+    <string name="title_equate_new">Add equate ...</string>
+    <string name="title_cwd">Current Work Directory</string>
+    <string name="title_settings">TdManager Settings</string>
+    <string name="title_drop">Drop surveys ?</string>
+
+    <string name="exported">Saved file %1$s</string>
+    <string name="export_failed">Failed export</string>
+
+    <string name="pref_cwd_title">Current Work Directory</string>
+    <string name="pref_dist_title">Selection radius</string>
+    <string name="pref_dist_summary">Selection radius</string>
+    <string name="pref_dist_message">Selection radius</string>
+    <string name="pref_textsize_title">Station name size</string>
+    <string name="pref_textsize_summary">Station name size</string>
+    <string name="pref_textsize_message">Station name size</string>
+
+    <string name="TdManagerPerms">Permissions</string>
+    <string name="perms_mandatory">TdManager cannot run without these permissions:</string>
+    <string name="perms_optional">TdManager may fail without these permissions:</string>
+    <string name="welcome_title">TdManager %1$s</string>
+</resources>

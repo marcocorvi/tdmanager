@@ -1,0 +1,63 @@
+ThManager is a cave projects manager.
+
+The "cave project" files are Therion config files in the directory "thconfig" of TopoDroid.
+The thconfig file is save whenever the project is closed.
+The survey files are Therion th files in the directory "th" of TopoDroid.
+Projects can be exported as Therion or Survex files; exports are saved in the "th" and "svx" directories,
+respectively.
+
+
+MAIN WINDOW 
+
+When you start ThManager it displays the thconfig files from the TopoDroid/thconfig directory.
+If this directory does not exist, the app creates it, and the thconfig list is empty.
+N.B. if you are working with another TopoDroid than the default, change the CWD (current work
+directory) to there, with the "Options" menu.
+
+Buttons:
+- create a new thconfig
+- app settings
+- this help
+- exit
+
+
+THCONFIG WINDOW
+
+When you tap a thconfig file, the app switches to show the list of th files contained in the project.
+If the project does not contain any th file, the list is empty, but you can easily add th files to it.
+
+Buttons:
+- add surveys (th files) to the project
+- drop surveys from the project
+- display the selected surveys (in plan view)
+- list the project equates
+- 3D display (with Cave3D)
+- export the project in Therion or Survex format
+- delete the project
+- exit
+
+When a survey file is dropped, the equates with its stations are also deleted.
+
+
+VIEW WINDOW
+
+The survey are displayed in plan view, with midline and station names.
+Each survey has a different color (after a while colors repeat).
+Equates are shown as dashed red lines, and equated stations have a round background.
+The view can be panned and zoomed.
+A survey can be grabbed (tap on a station: it gets circled) and dragged around while the other surveys do not move.
+In this way you can overlap stations of different surveys that you want to equate.
+When they overlap circle them both by tapping the point: you can then insert the equate between them with the menu "add equate".
+
+It is advisible to work with two surveys at a time.
+
+Buttons:
+- add a new equate
+- list the project equates
+- exit
+
+You can drop an equate by tapping its entry.
+
+
+
+
