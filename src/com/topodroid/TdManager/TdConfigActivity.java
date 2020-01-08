@@ -3,7 +3,7 @@
  * @author marco corvi
  * @date may 2012
  *
- * @brief interface activity for a thconfig file
+ * @brief interface activity for a tdconfig file
  * --------------------------------------------------------
  *  Copyright This software is distributed under GPL-3.0 or later
  *  See the file COPYING.
@@ -155,7 +155,7 @@ public class TdConfigActivity extends Activity
       mList.setAdapter( mTdInputAdapter );
       mList.invalidate();
     } else {
-      Toast.makeText( this, R.string.no_thconfig, Toast.LENGTH_LONG ).show();
+      Toast.makeText( this, R.string.no_tdconfig, Toast.LENGTH_LONG ).show();
     }
   }
 
@@ -335,7 +335,7 @@ public class TdConfigActivity extends Activity
   private void askDelete()
   {
     new TdAlertDialog( this, getResources(), 
-                             getResources().getString( R.string.ask_delete_thconfig ),
+                             getResources().getString( R.string.ask_delete_tdconfig ),
       new DialogInterface.OnClickListener() {
         @Override
         public void onClick( DialogInterface dialog, int btn ) {

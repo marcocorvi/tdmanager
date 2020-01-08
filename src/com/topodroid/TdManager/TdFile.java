@@ -17,7 +17,7 @@ import android.util.Log;
 class TdFile 
 {
   private String mName;                // filename without extension (for display purposes) or surveyname (TD database)
-  private String mFilepath;            // thconfig file (fullpath) or null
+  private String mFilepath;            // tdconfig file (fullpath) or null
 
   public TdFile( String filepath, String surveyname )
   {
@@ -25,7 +25,7 @@ class TdFile
     if ( surveyname == null ) { // get name from file
       int pos = mFilepath.lastIndexOf('/');
       mName = ( pos >= 0 )? mFilepath.substring( pos+1 ) : mFilepath;
-      mName = mName.replace(".thconfig", "");
+      mName = mName.replace(".tdconfig", "");
     } else {
       mName = surveyname;
     }

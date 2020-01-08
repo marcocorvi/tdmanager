@@ -29,11 +29,11 @@ import android.os.RemoteException;
 
 public class TdManagerPath
 {
-  static private String mTdConfigDir; // pathname of dir with thconfig projects
-  // static private String mTdDir;       // pathname of dir with th survey files
+  static private String mTdConfigDir; // pathname of dir with tdconfig projects
+  // static private String mThDir;       // pathname of dir with th survey files
 
-  static private FilenameFilter mFilterTdConfig; // filename filter for ".thconfig"
-  static private FilenameFilter mFilterTd;       // filename filter for ".th"
+  static private FilenameFilter mFilterTdConfig; // filename filter for ".tdconfig"
+  // static private FilenameFilter mFilterTh;       // filename filter for ".th"
 
   // ------------------------------------------------------------
   // PATHS
@@ -68,13 +68,13 @@ public class TdManagerPath
     }
     // Log.v(TAG, "Base Path \"" + APP_BASE_PATH + "\"" );
 
-    mTdConfigDir = APP_BASE_PATH + "thconfig/";
-    // mTdDir       = APP_BASE_PATH + "th/";
+    mTdConfigDir = APP_BASE_PATH + "tdconfig/";
+    // mThDir       = APP_BASE_PATH + "th/";
 
     File f1 = new File( mTdConfigDir );
     if ( ! f1.exists() ) f1.mkdirs( );
 
-    // File f2 = new File( mTdDir );
+    // File f2 = new File( mThDir );
     // if ( ! f2.exists() ) f2.mkdirs( );
   }
 
@@ -82,15 +82,15 @@ public class TdManagerPath
   {
     mFilterTdConfig = new FilenameFilter() {
        public boolean accept(File dir, String name) {
-         return name.endsWith( "thconfig" );
+         return name.endsWith( "tdconfig" );
        }
     };
 
-    mFilterTd  = new FilenameFilter() {
-       public boolean accept(File dir, String name) {
-         return name.endsWith( "th" );
-       }
-    };
+    // mFilterTh  = new FilenameFilter() {
+    //    public boolean accept(File dir, String name) {
+    //      return name.endsWith( "th" );
+    //    }
+    // };
   }
 
 
@@ -122,25 +122,25 @@ public class TdManagerPath
     return dir.listFiles( mFilterTdConfig );
   }
 
-  // static File[] scanTdDir()
+  // static File[] scanThDir()
   // {
-  //   File dir = new File( mTdDir );
+  //   File dir = new File( mThDir );
   //   return dir.listFiles( mFilterTd );
   // }
 
-  // static String getTdPath( String th_name ) 
+  // static String getThPath( String th_name ) 
   // {
-  //   return mTdDir + th_name; 
+  //   return mThDir + th_name; 
   // }
 
-  static String getTdConfigPath( String thconfig_name ) 
+  static String getTdConfigPath( String tdconfig_name ) 
   {
-    return mTdConfigDir + thconfig_name; 
+    return mTdConfigDir + tdconfig_name; 
   }
 
   static String getTdConfigTestPath( )
   {
-    return mTdConfigDir + "test.thconfig";
+    return mTdConfigDir + "test.tdconfig";
   }
 
   // ------------------------------------------------------------------

@@ -60,8 +60,8 @@ public class TdConfigDialog extends Dialog
     {
       if (view.getId() == R.id.label_ok ) {
         String name = mLabel.getText().toString();
-        if ( ! name.endsWith( ".thconfig" ) ) {
-          name = name + ".thconfig";
+        if ( ! name.endsWith( ".tdconfig" ) ) {
+          name = name + ".tdconfig";
         }
         mActivity.addTdConfig( name );
       }

@@ -9,7 +9,7 @@
  *  See the file COPYING.
  * --------------------------------------------------------
  *
- * Displays the list of thconfig files
+ * Displays the list of tdconfig files
  * - long-pressing on a file opens it in the editor
  * - clicking on a file starts the TdConfigActivity on it
  */
@@ -88,7 +88,7 @@ public class TdManagerActivity extends Activity
 
     FeatureChecker.createPermissions( mApp, this );
 
-    setTitle("TH PROJECT MANAGER");
+    setTitle( R.string.app_title ); 
     
     mList = (ListView) findViewById(R.id.th_list);
     mList.setOnItemClickListener( this );
@@ -220,14 +220,14 @@ public class TdManagerActivity extends Activity
         public void onClick( View v ) {
           String survey = ((TextView)v).getText().toString();
 	  // Log.v("TdManager", "on click " + survey );
-          TdConfig thconfig = mTdConfigAdapter.get( survey );
-	  if ( thconfig != null ) startTdConfigActivity( thconfig );
+          TdConfig tdconfig = mTdConfigAdapter.get( survey );
+	  if ( tdconfig != null ) startTdConfigActivity( tdconfig );
 	}
       }
     );
-    File[] thconfigs = TdManagerPath.scanTdConfigDir();
-    if ( thconfigs.length > 0 ) {
-      for ( File file : thconfigs ) {
+    File[] tdconfigs = TdManagerPath.scanTdConfigDir();
+    if ( tdconfigs.length > 0 ) {
+      for ( File file : tdconfigs ) {
         // Log.v("TdManager", "TdManager activity update " + file.getAbsolutePath() );
         mTdConfigAdapter.add( new TdConfig( file.getAbsolutePath() ) );
       }
@@ -258,16 +258,16 @@ public class TdManagerActivity extends Activity
     //   return;
     // }
 
-    TdConfig thconfig = mTdConfigAdapter.getItem( pos );
-    // Log.v("TdManager", "On Item Click: pos " + pos + " TdConfig " + thconfig.mFilepath );
+    TdConfig tdconfig = mTdConfigAdapter.getItem( pos );
+    // Log.v("TdManager", "On Item Click: pos " + pos + " TdConfig " + tdconfig.mFilepath );
     // TODO start TdConfigActivity or Dialog
-    startTdConfigActivity( thconfig );
+    startTdConfigActivity( tdconfig );
   }
 
-  void startTdConfigActivity( TdConfig thconfig )
+  void startTdConfigActivity( TdConfig tdconfig )
   {
     Intent intent = new Intent( this, TdConfigActivity.class );
-    intent.putExtra( TdManagerApp.THCONFIG_PATH, thconfig.getFilepath() );
+    intent.putExtra( TdManagerApp.THCONFIG_PATH, tdconfig.getFilepath() );
     try {
       startActivityForResult( intent, TdManagerApp.REQUEST_THCONFIG );
     } catch ( ActivityNotFoundException e ) {
@@ -275,8 +275,8 @@ public class TdManagerActivity extends Activity
     }
   }
 
-  /** add a new thconfig file
-   * @param name    thconfig name
+  /** add a new tdconfig file
+   * @param name    tdconfig name
    */
   void addTdConfig( String name )
   {
@@ -286,22 +286,22 @@ public class TdManagerActivity extends Activity
       Toast.makeText( this, R.string.name_invalid, Toast.LENGTH_SHORT ).show();
       return;
     }
-    if ( ! filename.endsWith(".thconfig") ) filename = filename + ".thconfig";
+    if ( ! filename.endsWith(".tdconfig") ) filename = filename + ".tdconfig";
     String path = TdManagerPath.getTdConfigPath( filename );
     if ( (new File(path)).exists() ) {
       Toast.makeText( this, R.string.name_exists, Toast.LENGTH_SHORT ).show();
       return;
     }
-    TdConfig thconfig = new TdConfig( path );
+    TdConfig tdconfig = new TdConfig( path );
     // updateTdConfigList();
-    mTdConfigAdapter.add( thconfig );
+    mTdConfigAdapter.add( tdconfig );
     // Log.v("TdManager", "path >" + path + "< size " + mTdConfigAdapter.size() );
     // mList.setAdapter( mTdConfigAdapter );
     mList.invalidate();
   }
 
-  /** deletes a thconfig file
-   * @param filename thconfig filename
+  /** deletes a tdconfig file
+   * @param filename tdconfig filename
    */
   // void deleteTdConfig( String filepath )
   // {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TdManager</string>
+    <string name="app_title">Td Project Manager</string>
 
     <string name="name_invalid">Invalid name</string>
     <string name="name_exists">Existing file</string>
@@ -10,12 +11,12 @@
     <string name="no_extra">Missing file extra</string>
     <string name="no_path">Missing filepath</string>
     <string name="no_equate">No equate</string>
-    <string name="no_thconfig">Missing thconfig file</string>
+    <string name="no_tdconfig">Missing tdconfig file</string>
     <string name="no_th_file">No Therion file</string>
     <string name="file_exists">File exists</string>
     <string name="file_create_fail">File create fail</string>
 
-    <string name="ask_delete_thconfig">Delete ThConfig file</string>
+    <string name="ask_delete_tdconfig">Delete TdConfig file</string>
     <string name="ask_remove_equate">Remove equate %1$s ?</string>
     <string name="equate_no_station">No station selected</string>
     <string name="equate_no_stations">Too few stations</string>

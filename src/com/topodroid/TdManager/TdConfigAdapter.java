@@ -3,7 +3,7 @@
  * @author marco corvi
  * @date may 2012
  *
- * @brief th-config activity for a thconfig project-file
+ * @brief td-config adapter
  * --------------------------------------------------------
  *  Copyright This software is distributed under GPL-3.0 or later
  *  See the file COPYING.
@@ -46,9 +46,9 @@ class TdConfigAdapter extends ArrayAdapter< TdConfig >
   {
     // Log.v("TdManager", "TdConfig get survey >" + survey + "< size " + mItems.size() );
     if ( survey == null || survey.length() == 0 ) return null;
-    for ( TdConfig thconfig : mItems ) {
-      // Log.v("TdManager", "TdConfig item >" + thconfig.mName + "<" );
-      if ( thconfig.getSurveyName().equals( survey ) ) return thconfig;
+    for ( TdConfig tdconfig : mItems ) {
+      // Log.v("TdManager", "TdConfig item >" + tdconfig.mName + "<" );
+      if ( tdconfig.getSurveyName().equals( survey ) ) return tdconfig;
     }
     return null;
   }
@@ -57,9 +57,9 @@ class TdConfigAdapter extends ArrayAdapter< TdConfig >
   {
     File file = new File( filepath );
     boolean ret = file.delete();
-    for ( TdConfig thconfig : mItems ) {
-      if ( thconfig.getFilepath().equals( filepath ) ) {
-        mItems.remove( thconfig );
+    for ( TdConfig tdconfig : mItems ) {
+      if ( tdconfig.getFilepath().equals( filepath ) ) {
+        mItems.remove( tdconfig );
         break;
       }
     }

@@ -29,7 +29,7 @@ class TdConfig extends TdFile
 {
   String mParentDir;            // parent directory
   String mSurveyName;
-  TdSurvey mSurvey;             // inline survey in the thconfig file
+  TdSurvey mSurvey;             // inline survey in the tdconfig file
   ArrayList< TdInput > mInputs; // surveys: th files on input
   ArrayList< TdEquate > mEquates;
   private boolean mRead;        // whether the TdConfig has read the file
@@ -155,7 +155,7 @@ class TdConfig extends TdFile
 
   String exportTherion( boolean overwrite )
   {
-    String filepath = getFilepath().replace(".thconfig", ".th").replace("/thconfig/", "/th/");
+    String filepath = getFilepath().replace(".tdconfig", ".th").replace("/tdconfig/", "/th/");
     File file = new File( filepath );
     if ( file.exists() ) {
       if ( ! overwrite ) return null;
@@ -197,7 +197,7 @@ class TdConfig extends TdFile
 
   String exportSurvex( boolean overwrite )
   {
-    String filepath = getFilepath().replace(".thconfig", ".svx").replace("/thconfig/", "/svx/");
+    String filepath = getFilepath().replace(".tdconfig", ".svx").replace("/tdconfig/", "/svx/");
     File file = new File( filepath );
     if ( file.exists() ) {
       if ( ! overwrite ) return null;
@@ -248,7 +248,7 @@ class TdConfig extends TdFile
 
   private void readFile( )
   {
-    // if the file does not exists creates it and write an empty thconfig file
+    // if the file does not exists creates it and write an empty tdconfig file
     // Log.v("TdManager", "read file path " + getFilepath() );
     File file = new File( getFilepath() );
     if ( ! file.exists() ) {
