@@ -72,7 +72,7 @@ class TdViewEquateDialog extends Dialog
 
     setContentView(R.layout.tdviewequate_dialog);
     getWindow().setLayout( LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT );
-    setTitle("THERION EQUATES");
+    setTitle("EQUATES");
 
     mLayout = (LinearLayout) findViewById( R.id.layout );
 

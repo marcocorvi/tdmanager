@@ -55,7 +55,7 @@ class TdSourcesDialog extends Dialog
     mList = (ListView) findViewById(R.id.list);
     mList.setDividerHeight( 2 );
 
-    setTitle("THERION SURVEY FILES");
+    setTitle("SURVEYS");
 
     updateList();
   }

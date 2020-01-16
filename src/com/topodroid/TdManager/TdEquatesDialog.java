@@ -69,7 +69,7 @@ class TdEquatesDialog extends Dialog
     mList.setDividerHeight( 2 );
     mList.setOnItemClickListener( this );
 
-    setTitle("THERION EQUATES");
+    setTitle("EQUATES");
 
     updateList();
   }

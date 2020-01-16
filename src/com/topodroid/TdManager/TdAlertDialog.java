@@ -4,7 +4,7 @@
  * @date may 2012
  *
  * @brief alert dialog (copied from TopoDroid)
- * TODO REPLACE WITH TopoDroidAlertDialog
+ * TODO replace with TopoDroidAlertDialog
  * --------------------------------------------------------
  *  Copyright This software is distributed under GPL-3.0 or later
  *  See the file COPYING.

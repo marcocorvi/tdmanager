@@ -88,10 +88,10 @@ public class TdConfigActivity extends Activity
     mApp.mConfig = null;
     Bundle extras = getIntent().getExtras();
     if ( extras != null ) {
-      String path = extras.getString( TdManagerApp.THCONFIG_PATH );
+      String path = extras.getString( TdManagerApp.TDCONFIG_PATH );
       if ( path != null ) {
         File file = new File(path);
-        Log.v( TdManagerApp.TAG, "TdConfigActivity path <" + path + ">" );
+        Log.v( TdManagerApp.TAG, "Td Config Activity path <" + path + ">" );
         mApp.mConfig = new TdConfig( path );
         mApp.mConfig.readTdConfig();
         if ( file.exists() ) {
@@ -106,7 +106,7 @@ public class TdConfigActivity extends Activity
       }
     }
     if ( mApp.mConfig == null ) {
-      doFinish( TdManagerApp.RESULT_THCONFIG_NONE );
+      doFinish( TdManagerApp.RESULT_TDCONFIG_NONE );
     } else {
       setContentView(R.layout.tdconfig_activity);
       // getWindow().setLayout( LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT );
@@ -198,7 +198,7 @@ public class TdConfigActivity extends Activity
       lp.width  = size;
       lp.height = size;
 
-      // FIXME THMANAGER
+      // FIXME TDMANAGER
       mButton1 = new Button[mNrButton1];
 
       for (int k=0; k<mNrButton1; ++k ) {
@@ -350,7 +350,7 @@ public class TdConfigActivity extends Activity
     // if ( ! TdManagerApp.deleteTdConfigFile( mApp.mConfig.getFilepath() ) ) { 
     //   Toast.makeText( this, "delete FAILED", Toast.LENGTH_LONG ).show();
     // } else {
-      doFinish( TdManagerApp.RESULT_THCONFIG_DELETE );
+      doFinish( TdManagerApp.RESULT_TDCONFIG_DELETE );
     // }
   }
 
@@ -358,9 +358,9 @@ public class TdConfigActivity extends Activity
   {
     Intent intent = new Intent();
     if ( mApp.mConfig != null ) {
-      intent.putExtra( TdManagerApp.THCONFIG_PATH, mApp.mConfig.getFilepath() );
+      intent.putExtra( TdManagerApp.TDCONFIG_PATH, mApp.mConfig.getFilepath() );
     } else {
-      intent.putExtra( TdManagerApp.THCONFIG_PATH, "no_path" );
+      intent.putExtra( TdManagerApp.TDCONFIG_PATH, "no_path" );
     }
     setResult( result, intent );
     finish();
@@ -397,7 +397,7 @@ public class TdConfigActivity extends Activity
   {
     // Log.v("TdManager", "TdConfig activity back pressed");
     // if ( mApp.mConfig != null ) mApp.mConfig.writeTdConfig( false );
-    doFinish( TdManagerApp.RESULT_THCONFIG_OK );
+    doFinish( TdManagerApp.RESULT_TDCONFIG_OK );
   }
 
   @Override
@@ -430,8 +430,9 @@ public class TdConfigActivity extends Activity
       (new TdEquatesDialog( this, mApp.mConfig, null )).show();
     } else if ( k1 < mNrButton1 && b0 == mButton1[k1++] ) {  // 3D
       try {
+        Log.v("TdManager", "Cave3D of " + mApp.mConfig.getFilepath() );
         Intent intent = new Intent( "Cave3D.intent.action.Launch" );
-        intent.putExtra( "survey", mApp.mConfig.getFilepath() );
+        intent.putExtra( "INPUT_FILE", mApp.mConfig.getFilepath() );
         startActivity( intent );
       } catch ( ActivityNotFoundException e ) {
         Toast.makeText( this, "Missing Cave3D", Toast.LENGTH_SHORT ).show();

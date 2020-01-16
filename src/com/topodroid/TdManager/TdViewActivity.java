@@ -485,7 +485,7 @@ public class TdViewActivity extends Activity
       lp.width  = size;
       lp.height = size;
 
-      // FIXME THMANAGER
+      // FIXME TDMANAGER
       mButton1 = new Button[mNrButton1];
 
       for (int k=0; k<mNrButton1; ++k ) {

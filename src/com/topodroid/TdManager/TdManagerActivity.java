@@ -15,6 +15,8 @@
  */
 package com.topodroid.TdManager;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.FilenameFilter;
@@ -52,8 +54,6 @@ import android.view.Menu;
 // import android.view.SubMenu;
 import android.view.MenuItem;
 // import android.view.MenuInflater;
-
-import android.util.Log;
 
 public class TdManagerActivity extends Activity
                        implements OnItemClickListener
@@ -140,7 +140,7 @@ public class TdManagerActivity extends Activity
       lp.height = size;
       // MyButton.resetCache( size );
 
-      // FIXME THMANAGER
+      // FIXME TDMANAGER
       // mNrButton1 = 3 + ( TDSetting.mLevelOverAdvanced ? 2 : 0 );
       mButton1 = new Button[mNrButton1];
 
@@ -267,9 +267,9 @@ public class TdManagerActivity extends Activity
   void startTdConfigActivity( TdConfig tdconfig )
   {
     Intent intent = new Intent( this, TdConfigActivity.class );
-    intent.putExtra( TdManagerApp.THCONFIG_PATH, tdconfig.getFilepath() );
+    intent.putExtra( TdManagerApp.TDCONFIG_PATH, tdconfig.getFilepath() );
     try {
-      startActivityForResult( intent, TdManagerApp.REQUEST_THCONFIG );
+      startActivityForResult( intent, TdManagerApp.REQUEST_TDCONFIG );
     } catch ( ActivityNotFoundException e ) {
       Toast.makeText( this, R.string.no_editor, Toast.LENGTH_LONG ).show();
     }
@@ -314,16 +314,18 @@ public class TdManagerActivity extends Activity
   {
     Bundle extras = (intent != null )? intent.getExtras() : null;
     switch ( request ) {
-      case TdManagerApp.REQUEST_THCONFIG:
-        if ( result == TdManagerApp.RESULT_THCONFIG_OK ) {
+      case TdManagerApp.REQUEST_TDCONFIG:
+        if ( result == TdManagerApp.RESULT_TDCONFIG_OK ) {
+          Log.v("TdManager", "TdConfig OK" );
           // nothing 
-        } else if ( result == TdManagerApp.RESULT_THCONFIG_DELETE ) {
+        } else if ( result == TdManagerApp.RESULT_TDCONFIG_DELETE ) {
           // get TdConfig name and delete it
-          String path = extras.getString( TdManagerApp.THCONFIG_PATH );
+          String path = extras.getString( TdManagerApp.TDCONFIG_PATH );
           mTdConfigAdapter.deleteTdConfig( path );
           mList.invalidate();
           // updateTdConfigList();
-        } else if ( result == TdManagerApp.RESULT_THCONFIG_NONE ) {
+        } else if ( result == TdManagerApp.RESULT_TDCONFIG_NONE ) {
+          Log.v("TdManager", "TdConfig NONE" );
           // nothing
         }
     }
@@ -387,7 +389,7 @@ public class TdManagerActivity extends Activity
     //   return;
     // }
     int k1 = 0;
-    if ( k1 < mNrButton1 && b0 == mButton1[k1++] ) { // THCONFIG
+    if ( k1 < mNrButton1 && b0 == mButton1[k1++] ) { // TDCONFIG
       (new TdConfigDialog( this, this )).show();
     } else if ( k1 < mNrButton1 && b0 == mButton1[k1++] ) {  // OPTIONS
       Intent intent = new Intent( this, TdManagerPreferences.class );

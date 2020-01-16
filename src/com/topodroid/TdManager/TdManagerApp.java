@@ -36,19 +36,19 @@ public class TdManagerApp extends Application
 {
   static final String TAG = "TdManager";
 
-  static final String THMANAGER_SURVEY = "TdManagerSurvey";
-  static final String THMANAGER_PATH = "TdManagerPath";
-  static final String THCONFIG_PATH = "TdManagerConfig";
+  static final String TDMANAGER_SURVEY = "TdManagerSurvey";
+  static final String TDMANAGER_PATH = "TdManagerPath";
+  static final String TDCONFIG_PATH = "TdManagerConfig";
   static String VERSION = "";
 
-  final static int REQUEST_THCONFIG = 0;
+  final static int REQUEST_TDCONFIG = 0;
   final static int REQUEST_CWD = 1;
 
-  final static int RESULT_THCONFIG_OK     = 0;
-  final static int RESULT_THCONFIG_DELETE = 1;
-  final static int RESULT_THCONFIG_NONE   = 2;
+  final static int RESULT_TDCONFIG_OK     = 0;
+  final static int RESULT_TDCONFIG_DELETE = 1;
+  final static int RESULT_TDCONFIG_NONE   = 2;
 
-  final static String THMANAGER_CWD = "THMANAGER_CWD";
+  final static String TDMANAGER_CWD = "TDMANAGER_CWD";
 
   // static final int MODE_SOURCE = 0;
   // static final int NODE_SURVEY = 1;
@@ -76,12 +76,12 @@ public class TdManagerApp extends Application
     mPrefs = PreferenceManager.getDefaultSharedPreferences( this );
     // this.prefs.registerOnSharedPreferenceChangeListener( this );
 
-    mCWD = mPrefs.getString( THMANAGER_CWD, "TopoDroid" );
+    mCWD = mPrefs.getString( TDMANAGER_CWD, "TopoDroid" );
     try {
-      mDist = Double.parseDouble( mPrefs.getString( "THMANAGER_DIST", "40" ) );
+      mDist = Double.parseDouble( mPrefs.getString( "TDMANAGER_DIST", "40" ) );
     } catch ( NumberFormatException e ) { }
     try {
-      mTextSize = Integer.parseInt( mPrefs.getString( "THMANAGER_TEXTSIZE", "24" ) );
+      mTextSize = Integer.parseInt( mPrefs.getString( "TDMANAGER_TEXTSIZE", "24" ) );
     } catch ( NumberFormatException e ) { }
 
     mCheckPerms = FeatureChecker.checkPermissions( this );
@@ -108,7 +108,7 @@ public class TdManagerApp extends Application
     // Log.v("DistoX", "setCWDPreference " + cwd );
     if ( mPrefs != null ) {
       Editor editor = mPrefs.edit();
-      editor.putString( THMANAGER_CWD, cwd ); 
+      editor.putString( TDMANAGER_CWD, cwd ); 
       editor.commit();
     }
     mCWD = cwd;
@@ -118,13 +118,13 @@ public class TdManagerApp extends Application
 
   public void onSharedPreferenceChanged( SharedPreferences sp, String k ) 
   {
-    if ( k.equals( "THMANAGER_DIST" ) ) {
+    if ( k.equals( "TDMANAGER_DIST" ) ) {
       try {
-        mDist = Double.parseDouble( mPrefs.getString( "THMANAGER_DIST", "40" ) );
+        mDist = Double.parseDouble( mPrefs.getString( "TDMANAGER_DIST", "40" ) );
       } catch ( NumberFormatException e ) { }
-    } else if ( k.equals( "THMANAGER_TEXTSIZE" ) ) {
+    } else if ( k.equals( "TDMANAGER_TEXTSIZE" ) ) {
       try {
-        mTextSize = Integer.parseInt( mPrefs.getString( "THMANAGER_TEXTSIZE", "24" ) );
+        mTextSize = Integer.parseInt( mPrefs.getString( "TDMANAGER_TEXTSIZE", "24" ) );
       } catch ( NumberFormatException e ) { }
     }
   }

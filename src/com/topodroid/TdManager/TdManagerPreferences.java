@@ -40,7 +40,7 @@ public class TdManagerPreferences extends PreferenceActivity
     addPreferencesFromResource(R.xml.preferences);
 
     final Intent cwd_intent = new Intent( this, CWDActivity.class );
-    mCwdPreference = (Preference) findPreference( TdManagerApp.THMANAGER_CWD );
+    mCwdPreference = (Preference) findPreference( TdManagerApp.TDMANAGER_CWD );
     mCwdPreference.setOnPreferenceClickListener( 
         new Preference.OnPreferenceClickListener() {
           @Override
@@ -60,7 +60,7 @@ public class TdManagerPreferences extends PreferenceActivity
     switch ( request ) {
       case TdManagerApp.REQUEST_CWD:
         if ( extras != null ) {
-          String cwd = extras.getString( TdManagerApp.THMANAGER_CWD );
+          String cwd = extras.getString( TdManagerApp.TDMANAGER_CWD );
           mCwdPreference.setSummary( cwd );
         }
         break;

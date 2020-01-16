@@ -69,7 +69,7 @@ public class CWDActivity extends Activity
     mApp.setCWDPreference( dir_name );
 
     Intent intent = new Intent();
-    intent.putExtra( TdManagerApp.THMANAGER_CWD, dir_name );
+    intent.putExtra( TdManagerApp.TDMANAGER_CWD, dir_name );
     setResult( RESULT_OK, intent );
   }
     
